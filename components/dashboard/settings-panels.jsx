@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Check, Loader2 } from "lucide-react";
+import { Check, Loader2, Upload } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -82,12 +82,42 @@ export function SettingsPanels() {
       <div className="space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle className="text-base">Agency profile</CardTitle>
+            <CardTitle className="text-base">Branding &amp; white-label</CardTitle>
             <p className="mt-1 text-sm text-muted-foreground">
-              Shown to every client across their portal and reports.
+              Your logo, colours and domain — what every client sees instead of
+              ours, across the portal and every report.
             </p>
           </CardHeader>
           <CardContent className="grid gap-5 sm:grid-cols-2">
+            <div className="space-y-2.5 sm:col-span-2">
+              <Label>Agency logo</Label>
+              <div className="flex flex-wrap items-center gap-4 rounded-xl border border-border bg-secondary/25 p-4">
+                <span
+                  className="flex size-14 shrink-0 items-center justify-center rounded-xl text-lg font-semibold text-zinc-950"
+                  style={{ backgroundColor: accent }}
+                >
+                  ND
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-medium text-zinc-200">
+                    northbound-mark.svg
+                  </p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">
+                    SVG or PNG, at least 256×256. Replaces our mark everywhere.
+                  </p>
+                </div>
+                <div className="flex shrink-0 items-center gap-2">
+                  <Button type="button" variant="outline" size="sm">
+                    <Upload />
+                    Replace
+                  </Button>
+                  <Button type="button" variant="ghost" size="sm">
+                    Remove
+                  </Button>
+                </div>
+              </div>
+            </div>
+
             <div className="space-y-2">
               <Label htmlFor="agency-name">Agency name</Label>
               <Input id="agency-name" defaultValue="Northbound Demand" />
